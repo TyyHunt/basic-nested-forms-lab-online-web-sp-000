@@ -8,10 +8,12 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new(recipe_params)
+    @recipe = Recipe.new
   end
 
   def create
+    recipe = Recipe.create(recipe_params)
+    redirect_to recipe_path
   end
 
   private
